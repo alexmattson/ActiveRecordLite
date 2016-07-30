@@ -1,4 +1,4 @@
-require '04_associatable2'
+require 'associatable-two_step_connections'
 
 describe 'Associatable' do
   before(:each) { DBConnection.reset }
@@ -119,10 +119,8 @@ describe 'Associatable' do
 
       it 'fetches associated `siblings` for a `Cat`' do
         siblings = cat.siblings
-        puts siblings
-        # expect(cats.first).to be_instance_of(Cat)
-        # expect(cats.count).to eq(2)
-        # expect(cats.first.name).to eq('Breakfast')
+        expect(siblings.first).to be_instance_of(Cat)
+        expect(siblings.first.name).to eq('Haskell')
       end
 
     end

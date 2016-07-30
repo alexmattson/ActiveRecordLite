@@ -1,4 +1,4 @@
-require '03_associatable'
+require 'associatable-one_step_connections'
 
 describe 'AssocOptions' do
   describe 'BelongsToOptions' do
@@ -65,7 +65,7 @@ describe 'AssocOptions' do
       options = HasManyOptions.new('cats', 'Human')
       expect(options.model_class).to eq(Cat)
     end
-    
+
     it '#table_name returns table name of associated object' do
       options = BelongsToOptions.new('human')
       expect(options.table_name).to eq('humans')

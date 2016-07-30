@@ -1,5 +1,4 @@
-require_relative '03_associatable'
-require 'byebug'
+require_relative 'associatable-one_step_connections'
 
 module Associatable
 
