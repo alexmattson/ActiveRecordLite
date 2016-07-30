@@ -2,7 +2,7 @@ require_relative 'lib/active_record_lite'
 
 
 # open database connection
-DBConnection.reset
+DBConnection.open('cats.db')
 
 # define cat model
 class Cat < SQLObject
