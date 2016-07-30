@@ -2,6 +2,8 @@ require_relative 'searchable'
 require 'active_support/inflector'
 require_relative 'attr_accessor_object.rb'
 
+require 'byebug'
+
 class AssocOptions < AttrAccessorObject
   my_attr_accessor(
     :foreign_key,

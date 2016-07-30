@@ -1,7 +1,8 @@
 require 'active_support/inflector'
 require_relative 'dependencies.rb'
+require_relative 'db_connection.rb'
 
-class SQLObject
+class SQLObject < AttrAccessorObject
   extend Searchable
   extend Associatable
 
