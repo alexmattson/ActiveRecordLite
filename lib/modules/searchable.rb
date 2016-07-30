@@ -1,5 +1,5 @@
-require_relative 'db_connection'
-require_relative 'sql_object'
+require_relative '../db_connection'
+# require_relative '../sql_object'
 
 module Searchable
   def where(params)
@@ -15,9 +15,4 @@ module Searchable
     atts.map{|att| self.new(att)}
   end
 
-end
-
-class SQLObject
-  extend Searchable
-  # Mixin Searchable here...
 end

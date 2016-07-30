@@ -1,4 +1,4 @@
-require 'attr_accessor_object'
+require 'sql_object'
 
 describe AttrAccessorObject do
   before(:all) do

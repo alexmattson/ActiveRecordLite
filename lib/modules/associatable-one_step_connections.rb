@@ -1,8 +1,9 @@
 require_relative 'searchable'
 require 'active_support/inflector'
+require_relative 'attr_accessor_object.rb'
 
-class AssocOptions
-  attr_accessor(
+class AssocOptions < AttrAccessorObject
+  my_attr_accessor(
     :foreign_key,
     :class_name,
     :primary_key
@@ -56,8 +57,4 @@ module Associatable
   def assoc_options
     @assoc_options ||= Hash.new
   end
-end
-
-class SQLObject
-  extend Associatable
 end

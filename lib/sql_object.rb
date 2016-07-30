@@ -1,7 +1,9 @@
-require_relative 'db_connection'
 require 'active_support/inflector'
+require_relative 'dependencies.rb'
 
 class SQLObject
+  extend Searchable
+  extend Associatable
 
   def self.columns
     return @columns unless @columns.nil?
@@ -26,7 +28,7 @@ class SQLObject
   end
 
   def self.table_name
-    @table_name ||= self.to_s.tableize_name
+    @table_name ||= self.to_s.tableize
   end
 
   def self.all
@@ -105,19 +107,4 @@ class SQLObject
     col
   end
 
-end
-
-class String
-
-  def tableize_name
-    self.to_snake_case + "s"
-  end
-
-  def to_snake_case
-    self.gsub(/::/, '/').
-    gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
-    gsub(/([a-z\d])([A-Z])/,'\1_\2').
-    tr("-", "_").
-    downcase
-  end
 end

@@ -1,4 +1,4 @@
-require 'associatable-one_step_connections'
+require 'sql_object'
 
 describe 'AssocOptions' do
   describe 'BelongsToOptions' do

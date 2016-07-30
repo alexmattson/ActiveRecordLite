@@ -1,4 +1,4 @@
-require 'associatable-two_step_connections'
+require 'sql_object'
 
 describe 'Associatable' do
   before(:each) { DBConnection.reset }
